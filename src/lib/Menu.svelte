@@ -1,13 +1,22 @@
 <script lang="ts">
-  let count: number = 0
-  const increment = () => {
-    count += 1
-  }
+  let marshmallows: [any] = [
+      {
+          name: "Fluffy", 
+          priceCents: 299
+      },
+      {
+          name: "Not as fluffy", 
+          priceCents: 199
+      }
+  ]
+  export let addCartItem;
 </script>
 
-<button on:click={increment}>
-  Clicks: {count}
-</button>
+{#each marshmallows as marshmallow}
+    <button on:click={addCartItem(marshmallow)}>
+        {marshmallow.name}<br>${marshmallow.priceCents / 100.0}
+    </button>
+{/each}
 
 <style>
   button {
