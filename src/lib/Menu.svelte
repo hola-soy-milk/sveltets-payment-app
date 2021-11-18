@@ -1,5 +1,5 @@
 <script lang="ts">
-  let marshmallows: [any] = [
+  let marshmallows: any = [
       {
           name: "Fluffy", 
           priceCents: 299

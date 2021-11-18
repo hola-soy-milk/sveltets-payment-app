@@ -1,6 +1,7 @@
 <script lang="ts">
-  import Menu from './lib/Menu.svelte'
-  let cartItems : [any] = [];
+  import Cart from './lib/Cart.svelte';
+import Menu from './lib/Menu.svelte'
+  let cartItems : any = [];
   const addCartItem = (item : any) => {
     cartItems = [...cartItems, item]
   }
@@ -10,9 +11,7 @@
   <h1>Marshmallow shop!</h1>
 
   <Menu addCartItem={addCartItem}/>
-  {#each cartItems as item}
-    <h1>{item.name}</h1>
-  {/each}
+  <Cart items={cartItems} />
 </main>
 
 <style>
